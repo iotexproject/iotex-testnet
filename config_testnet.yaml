@@ -40,10 +40,6 @@ blockSync:
   maxRepeat: 3
   repeatDecayStep: 3
 
-db:
-  splitDBHeight: 900000
-  splitDBSizeMB: 640
-
 log:
   zap:
     level: info
