@@ -65,7 +65,7 @@ curl https://raw.githubusercontent.com/iotexproject/iotex-bootstrap/v1.0.0/genes
 
 3. Edit `$IOTEX_HOME/etc/config.yaml`, look for `externalHost` and `producerPrivKey`, uncomment the lines and fill in your external IP and private key. You also need to replace the `gravityChainAPIs` to use your own infura project key. And make sure you enabled archive data access if you need to access Ethereum archive node data.
 
-4. (Optional) If you prefer to start from a snapshot, run the following commands:
+4. To start from a snapshot, run the following commands:
 
 ```
 curl -L https://t.iotex.me/mainnet-data-latest > $IOTEX_HOME/data.tar.gz
@@ -73,6 +73,8 @@ tar -xzf data.tar.gz
 ```
 We will update the snapshot once a day. If you plan to run your node as a gateway, please use the snapshot with index data:
 https://t.iotex.me/mainnet-data-with-idx-latest.
+
+(Optional) If you want to sync the chain from 0 height, please change the `gravityChainAPIs` in config.yaml to use your infura key with archieve mode supported or change the API endpoint to an Ethereum node with archieve data which you can access.
 
 5. Run the following command to start a node:
 
@@ -137,7 +139,7 @@ cp ./bin/server $IOTEX_HOME/iotex-server
 
 Same as [Join MainNet](#mainnet) step 3. Also make sure you update all db paths in config.yaml to correct location if you don't put them under `/var/data/`
 
-4. (Optional) Start from a snapshot
+4. Start from a snapshot
 
 Same as [Join MainNet](#mainnet) step 4
 
